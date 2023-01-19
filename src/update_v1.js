@@ -67,7 +67,6 @@ var mod_lic = {
         }
     },
     init: function(params, fn_show_status_everywhere_custom, disable_activation_form) {
-    //init: function(fn_show_status_everywhere_custom, disable_activation_form) {
         
         if (params && typeof(params) == 'object') {
             mod_lic.params = $.extend(mod_lic.params, params);
