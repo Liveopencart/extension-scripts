@@ -30,7 +30,9 @@ var mod_lic = {
         }
     },
     getUrlSaveActivationKey: function(){
-        if (typeof(module_details) != 'undefined' && module_details.url_save_activation_key) {
+        if (mod_lic.params.url_save_activation_key) {
+            return mod_lic.params.url_save_activation_key;
+        } else if (typeof(module_details) != 'undefined' && module_details.url_save_activation_key) {
             return module_details.url_save_activation_key;
         } else {
             return '';
