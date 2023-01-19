@@ -139,7 +139,7 @@ var mod_lic = {
                     $('#we_recommend').html(data.recommend);
                 }
                 if (data.update) {
-                    $('#tab-about-button').append('&nbsp;&nbsp;<span style="style="color:red">'+mod_lic.getText('text_update_alert')+'</span>');
+                    $('#tab-about-button').append('&nbsp;&nbsp;<span style="color:red">'+mod_lic.getText('text_update_alert')+'</span>');
                     $('#module_description').after('<hr><div class="alert alert-info" role="alert">'+data.update+'</div>');
                 }
                 if (data.product_pages) {
