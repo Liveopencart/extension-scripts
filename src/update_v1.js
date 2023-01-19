@@ -128,10 +128,6 @@ var mod_lic = {
     getSelectedActivationWay: function() {
       return $(':radio[name="activation_way"]:checked').val();   
     },
-    //
-    //updateActivateButtonVisibility: function(){
-    //    let visible = mod_lic.getSelectedActivationWay() == 'key' || (mod_lic.getSelectedActivationWay() == 'order_id' && $(':radio[name="activation_this_is_test_domain"]:checked').length);
-    //},
     
     initModulePage: function(params) {
         
@@ -159,7 +155,7 @@ var mod_lic = {
             lang: mod_lic.getConfigAdminLanguage(),
         };
         
-        let activation_way = $(':radio[name="activation_way"]:checked').val();
+        let activation_way = mod_lic.getSelectedActivationWay();
         
         if (activation_way == 'order_id') {
             data.order_id = $(':input[name="activation_new_order_id"]').val();
@@ -169,7 +165,6 @@ var mod_lic = {
         if ($(':radio[name="activation_this_is_test_domain"][value="1"]').is(':checked')) {
             data.this_is_test_domain = true;
         }
-        
         
         $.ajax({
             type: 'POST',
