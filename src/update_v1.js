@@ -98,12 +98,18 @@ var mod_lic = {
                 if (checked_value == 'order_id') {
                     $('#container_activation_new_order_id').show();
                     $('#container_activation_new_key').hide();
-                    $('#container_activation_new_button').show();
-                    
                 } else if (checked_value == 'key') {
                     $('#container_activation_new_order_id').hide();
                     $('#container_activation_new_key').show();
+                }
+                $(':radio[name="activation_this_is_test_domain"]').change();
+            });
+            
+            $(':radio[name="activation_this_is_test_domain"]').change(function(){
+                if ($(':radio[name="activation_this_is_test_domain"]:checked').length) {
                     $('#container_activation_new_button').show();
+                } else {
+                    $('#container_activation_new_button').hide();
                 }
             });
             
@@ -150,7 +156,7 @@ var mod_lic = {
         } else if (activation_way == 'key') {
             data.key = $(':input[name="activation_new_key"]').val();
         }
-        if ($(':checkbox[name="activation_this_is_test_domain"]').is(':checked')) {
+        if ($(':radio[name="activation_this_is_test_domain"][value="1"]').is(':checked')) {
             data.this_is_test_domain = true;
         }
         
@@ -359,6 +365,5 @@ var mod_lic = {
 
     
 };
-
     
 export { mod_lic };
